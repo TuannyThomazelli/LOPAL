@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ClassificacaoTriangulo {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o lado a: ");
+        double ladoA = sc.nextDouble();
+
+        System.out.print("Digite o lado b: ");
+        double ladoB = sc.nextDouble();
+
+        System.out.print("Digite o lado c: ");
+        double ladoC = sc.nextDouble();
+
+        String classificacao;
+
+        if (ladoA <= 0 || ladoB <= 0 || ladoC <= 0) {
+            classificacao = "Triângulo não válido";
+        } else if (ladoA + ladoB <= ladoC || ladoA + ladoC <= ladoB || ladoB + ladoC <= ladoA) {
+            classificacao = "Triângulo não válido";
+        } else {
+            if (ladoA == ladoB && ladoB == ladoC) {
+                classificacao = "Triângulo Equilátero";
+            } else if (ladoA == ladoB || ladoA == ladoC || ladoB == ladoC) {
+                classificacao = "Triângulo Isósceles";
+            } else if (Math.pow(ladoA, 2) + Math.pow(ladoB, 2) == Math.pow(ladoC, 2) ||
+                     Math.pow(ladoA, 2) + Math.pow(ladoC, 2) == Math.pow(ladoB, 2) ||
+                     Math.pow(ladoB, 2) + Math.pow(ladoC, 2) == Math.pow(ladoA, 2)) {
+                classificacao = "Triângulo Retângulo";
+            } else {
+                classificacao = "Triângulo Escaleno";
+            }
+        }
+
+        System.out.println("Classificação do triângulo: " + classificacao);
+    }
+}
