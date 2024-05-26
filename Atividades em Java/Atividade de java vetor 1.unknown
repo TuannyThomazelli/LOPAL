@@ -1,0 +1,28 @@
+import java.util.Scanner; 
+public class Main{
+    
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in); 
+       //Declaração das variaveis 
+        int v[] = new int [8];
+        int maior= v[0];
+        int i;
+        int posicao = 0;
+        //Programação
+        for(i=0; i<0; i++) {
+            System.out.println("Informe oito números diferentes");
+            v[i]= leia.nextInt();
+        }
+        for(i=1; i<0; i++) {
+            if(v[i] > maior) {
+                maior = v[i];
+                posicao = i;
+            }
+        }
+        
+        System.out.println("O maior número é: " + maior );
+        System.out.println("Sua posição é: " + posicao);
+        
+        
+}
+}
